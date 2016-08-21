@@ -1,0 +1,13 @@
+<h1><%= @user_name.capitalize %></h1>
+
+<p> Email: <%= @email %></p>
+<p> Interests: <%= @interests.join(', ') %> </p>
+
+<div style="position: absolute; bottom: 5px">
+    <a href="/">Home</a>
+    <% @users.select do |user| %>
+        <% if user != @user_name %>
+            <a href="<%= user %>"> <%= user.capitalize %></a>
+        <%end%>
+    <%end%>
+</div>
