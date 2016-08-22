@@ -10,4 +10,5 @@
             <a href="<%= user %>"> <%= user.capitalize %></a>
         <%end%>
     <%end%>
+    <p><em>There are currently <%= @users.size %> users with a total of <%= count_interests(@users) %> interests.</em></p>
 </div>

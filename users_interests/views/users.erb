@@ -1,5 +1,7 @@
-<h1>Home page</h1>
+<h1>Users</h1>
 
 <% @users.each do |user| %>
-    <li style="list-style: none"><a href="<%= user[0] %>"> <%= user[0].capitalize %></a></li>
+    <li style="list-style: none">
+        <a href="<%= user[0] %>"> <%= user[0].capitalize %></a>
+    </li>
 <% end %>

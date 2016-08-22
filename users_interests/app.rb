@@ -7,6 +7,14 @@ before do
   @users = YAML.load_file('users.yaml')
 end
 
+helpers do
+  def count_interests(users)
+   users.reduce(0) do |sum, (name, user)|
+     sum + user[:interests].size
+   end
+  end
+end
+
 get '/' do
   redirect '/users'
 end
