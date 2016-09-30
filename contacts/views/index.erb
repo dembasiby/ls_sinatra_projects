@@ -1,0 +1,22 @@
+<hr>
+<table>
+  <thead>
+     <tr>
+       <th scope="col">Category Name</th>
+       <th scope="col"># of Contacts</th>
+     </tr>
+  </thead>
+  <tbody>
+    <% @categories.each do |category| %>
+        <tr>
+          <td><a href="/categories/<%= category[:id] %>">
+              <h4><%= category[:name] %></h4>
+            </a>
+          </td>
+          <td><%= @categories[@categories.index(category)][:contacts].size %></td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<p><a href="/categories/new">Create a New Category</a></p>

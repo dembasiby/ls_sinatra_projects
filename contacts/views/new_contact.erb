@@ -1,0 +1,22 @@
+<br>
+<form method="post" action="/categories/<%= @category_id %>/contacts/new">
+  <label for="contacts">Add a New Contact</label>
+  <div class="form-group">
+    <label for="contact_firstname" class="control-label">Firstname</label>
+    <input name="contact_firstname" type="text" placeholder="First Name" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="contact_lastname" class="control-label">Lastname</label>
+    <input name="contact_lastname" type="text" placeholder="Last Name" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="contact_phone" class="control-label">Phone</label>
+    <input name="contact_phone" type="text" placeholder="Phone Number" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="contact_email" class="control-label">Email</label>
+    <input name="contact_email" type="email" placeholder="Email" class="form-control">
+  </div>
+  <button type="submit" class="btn btn-primary">Create</button>
+  <a href="/categories/<%= @category_id %>">Cancel</a>
+</form>

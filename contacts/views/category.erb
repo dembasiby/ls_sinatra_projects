@@ -1,0 +1,37 @@
+<h1><%= @category[:name] %></h1>
+
+<table>
+  <thead>
+     <tr>
+       <th scope="col">First Name</th>
+       <th scope="col">Last Name</th>
+       <th scope="col">Phone</th>
+       <th scope="col">Email</th>
+       <th scope="col">Edit</th>
+       <th scope="col">Delete</th>
+     </tr>
+  </thead>
+  <tbody>
+    <% @category[:contacts].each_with_index do |contact, index| %>
+      <tr>
+        <td><%= contact[:firstname].capitalize %></td>
+        <td><%= contact[:lastname].capitalize %></td>
+        <td><%= contact[:phone] %></td>
+        <td><%= contact[:email] %></td>
+        <td> <a href="/categories/<%= @category_id %>/contacts/<%= index %>/edit">Edit</a></td>
+        <td>
+          <form onsubmit="return confirm('Are you sure you want to delete <%= contact[:firstname] %> <%= contact[:lastname] %> from your contacts?')" method="post" action="/categories/<%= @category_id %>/contacts/<%= index %>/delete">
+            <button type="submit">Delete</button>
+          </form>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<p><a href="/categories/<%= @category_id %>/contacts/new">Add a New Contact</a></p>
+<br>
+<form onsubmit="return confirm('Are you sure you want to delete this category ?')" method="post" action="/categories/<%= params[:id].to_i %>/delete">
+  <button type="submit">Delete Category</button>
+  <a href="/categories/<%= params[:id].to_i %>/edit">Edit Category</a>
+</form>

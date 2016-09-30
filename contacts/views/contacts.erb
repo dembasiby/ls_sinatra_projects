@@ -1,0 +1,26 @@
+<h1>Contacts</h1>
+
+<table>
+  <thead>
+     <tr>
+       <th scope="col">First Name</th>
+       <th scope="col">Last Name</th>
+       <th scope="col">Phone</th>
+       <th scope="col">Email</th>
+       <th scope="col">Category</th>
+     </tr>
+  </thead>
+  <tbody>
+    <% for i in (0..@categories.size - 1) %>
+      <% for j in (0..@categories[i][:contacts].size - 1) %>
+        <tr>
+          <td><%= @categories[i][:contacts][j][:firstname].capitalize %></td>
+          <td><%= @categories[i][:contacts][j][:lastname].capitalize %></td>
+          <td><%= @categories[i][:contacts][j][:phone] %></td>
+          <td><%= @categories[i][:contacts][j][:email] %></td>
+          <td><%= @categories[i][:name] %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
